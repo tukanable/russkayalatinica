@@ -597,19 +597,10 @@
         </div>
     </div>
 
-    <!-- RequireJS for AMD module loading -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="translit.js"></script>
     <script>
-        // Configure RequireJS
-        require.config({
-            paths: {
-                'translit': './translit'
-            }
-        });
-
-        // Load the transliteration module and initialize the app
-        require(['translit'], function(translitModule) {
-            const { translit, revertTranslit } = translitModule;
+        // Use the global transliteration functions
+        const { translit, revertTranslit } = window;
             
             // Get DOM elements
             const cyrillicInput = document.getElementById('cyrillic-input');
@@ -735,7 +726,6 @@
             
             console.log('🎉 Русская Латиница готова к работе!');
             console.log('💡 Попробуйте ввести "Привет, мир!" в левое поле');
-        });
     </script>
 </body>
 </html>

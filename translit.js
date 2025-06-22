@@ -2,19 +2,15 @@
  * Russkaya Latinica - TypeScript implementation
  * Based on the Cyrillic to Latin transliteration system
  */
-define("translit", ["require", "exports"], function (require, exports) {
+(function() {
     "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ContextType = exports.ElementType = void 0;
-    exports.translit = translit;
-    exports.revertTranslit = revertTranslit;
     var ElementType;
     (function (ElementType) {
         ElementType[ElementType["Consonant"] = 0] = "Consonant";
         ElementType[ElementType["Vowel"] = 1] = "Vowel";
         ElementType[ElementType["Other"] = 2] = "Other";
         ElementType[ElementType["NonLetter"] = 3] = "NonLetter";
-    })(ElementType || (exports.ElementType = ElementType = {}));
+    })(ElementType || (ElementType = {}));
     var ContextType;
     (function (ContextType) {
         ContextType[ContextType["Unset"] = 0] = "Unset";
@@ -28,7 +24,7 @@ define("translit", ["require", "exports"], function (require, exports) {
         ContextType[ContextType["NonOther"] = 8] = "NonOther";
         ContextType[ContextType["Letter"] = 9] = "Letter";
         ContextType[ContextType["HardSign"] = 10] = "HardSign";
-    })(ContextType || (exports.ContextType = ContextType = {}));
+    })(ContextType || (ContextType = {}));
     // Create a mapping for quick lookup of element types
     const elementTypeMap = new Map([
         // Vowels
@@ -463,4 +459,10 @@ define("translit", ["require", "exports"], function (require, exports) {
         }
         return result.join("");
     }
-});
+
+    // Export functions to global scope
+    window.translit = translit;
+    window.revertTranslit = revertTranslit;
+    window.ElementType = ElementType;
+    window.ContextType = ContextType;
+})();
