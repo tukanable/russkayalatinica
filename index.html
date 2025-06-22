@@ -214,6 +214,7 @@
         .info-section {
             background: #f8f9fa;
             padding: 40px 30px;
+            padding-bottom: 0;
             border-top: 1px solid #e9ecef;
         }
 
@@ -366,6 +367,78 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        .libraries-section {
+            margin-top: 40px;
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .libraries-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .libraries-header h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin: 0;
+        }
+
+        .libraries-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .library-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .library-btn:hover {
+            border-color: #4CAF50;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+        }
+
+        .library-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .library-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .library-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .libraries-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .libraries-section {
+                padding: 20px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -456,6 +529,26 @@
                     <div class="example-final">
                         <em>"Etikh neslozhnyikh principov uzhe dostatochno dlya togo, chtobyi nachatj privyikatj svobodno zapisyivatj russkij tekst latinicej..."</em>
                     </div>
+                </div>
+            </div>
+            
+            <div class="libraries-section">
+                <div class="libraries-buttons">
+                    <a href="https://github.com/tukanable/russkayalatinica/tree/main/go" target="_blank" class="library-btn">
+                        <div class="library-icon">🔷</div>
+                        <div class="library-name">Go</div>
+                        <div class="library-desc">Библиотека для Go</div>
+                    </a>
+                    <a href="https://github.com/tukanable/russkayalatinica/tree/main/ts" target="_blank" class="library-btn">
+                        <div class="library-icon">🔶</div>
+                        <div class="library-name">TypeScript</div>
+                        <div class="library-desc">Библиотека для TS/JS</div>
+                    </a>
+                    <a href="https://github.com/Roman-Kerimov/LinguisticKit" target="_blank" class="library-btn">
+                        <div class="library-icon">🔸</div>
+                        <div class="library-name">Swift</div>
+                        <div class="library-desc">Эталонная реализация</div>
+                    </a>
                 </div>
             </div>
         </div>
